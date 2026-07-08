@@ -1,3 +1,6 @@
+from Piece import Piece
+
+
 class Queen(Piece):
  
     @property
@@ -18,31 +21,31 @@ class Queen(Piece):
         if frm == to:
             return True
 
-        if frm[0] == to[0]:#אם כמו טורה
+        if frm[0] == to[0]:
             step = 1 if to[1] > frm[1] else -1
             col = frm[1] + step
             while col != to[1]:
-                if board[frm[0]][col] != ".":
+                if board[frm[0]][col] is not None:
                     return False
                 col += step
             return True
 
-        if frm[1] == to[1]:#אם כמו טורה
+        if frm[1] == to[1]:
             step = 1 if to[0] > frm[0] else -1
             row = frm[0] + step
             while row != to[0]:
-                if board[row][frm[1]] != ".":
+                if board[row][frm[1]] is not None:
                     return False
                 row += step
             return True
 
-        if abs(to[0] - frm[0]) == abs(to[1] - frm[1]):#אם כמו רץ
+        if abs(to[0] - frm[0]) == abs(to[1] - frm[1]):
             row_step = 1 if to[0] > frm[0] else -1
             col_step = 1 if to[1] > frm[1] else -1
             row = frm[0] + row_step
             col = frm[1] + col_step
             while (row, col) != (to[0], to[1]):
-                if board[row][col] != ".":
+                if board[row][col] is not None:
                     return False
                 row += row_step
                 col += col_step

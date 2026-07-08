@@ -1,3 +1,6 @@
+from Piece import Piece
+
+
 class Knight(Piece):#סוס - פרש
     @property
     def symbol(self):

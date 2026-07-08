@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Piece(ABC):
     def __init__(self, color):
         self.color = color
@@ -42,13 +43,19 @@ class Piece(ABC):
     def to_string(self):
         return self.color + self.symbol
 
+    # def __getitem__(self, index):
+    #     token = self.to_string()
+    #     return token[index]
 
-#     #בדיקה אם הם באותו צבע    
-# def if_same_color(move_from,move_to,board):
-#     piece_from = board[move_from[0]][move_from[1]]
-#     piece_to = board[move_to[0]][move_to[1]]
-#     if piece_to == ".":
-#         return True
-#     if piece_to[0]==piece_from[0]:#אם הם באותו צבע
-#         return False
-#     return True
+    # def __eq__(self, other):
+    #     if isinstance(other, Piece):
+    #         return self.to_string() == other.to_string()
+    #     if other is None:
+    #         return False
+    #     return self.to_string() == other
+
+    # def __ne__(self, other):
+    #     return not self.__eq__(other)
+
+    # def __repr__(self):
+    #     return self.to_string()
