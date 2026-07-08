@@ -15,19 +15,19 @@ class King(Piece):
     
 
 
-    #הוספה של תרגיל אם עדיין יש את שתי המלכים על הלוח 9
-def both_kings_exist(board):
-    white = False
-    black = False
+        #הוספה של תרגיל אם עדיין יש את שתי המלכים על הלוח 9
+    def both_kings_exist(board):
+        white = False
+        black = False
 
-    for row in board:
-        for cell in row:
-            if cell == "wK":
-                white = True
-            elif cell == "bK":
-                black = True
+        for row in board:
+            for cell in row:
+                if cell == "wK":
+                    white = True
+                elif cell == "bK":
+                    black = True
 
-    if white and black:
-        return True
+        if white and black:
+            return True
 
-    return False
+        return False

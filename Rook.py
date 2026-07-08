@@ -1,4 +1,4 @@
-class Rook(Piece):
+class Rook(Piece):#טורה
     
     @property
     def symbol(self):

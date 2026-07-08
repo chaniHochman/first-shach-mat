@@ -17,17 +17,27 @@ class Piece(ABC):
     def path_is_clear(self, board, move_from, move_to):
         pass
 
+    @staticmethod
+    def color_of(piece):
+        if piece is None or piece == ".":
+            return None
+        if hasattr(piece, "color"):
+            return piece.color
+        if isinstance(piece, str) and len(piece) > 0:
+            return piece[0]
+        return None
+
     def is_white(self):
         return self.color == "w"
 
     def is_black(self):
-        return self.color == "b"
+        return self.color_of(self) == "b"
 
     def same_color(self, other):
-        return other is not None and self.color == other.color
+        return self.color_of(self) == self.color_of(other)
     
     def enemy(self, other):
-        return other is not None and other.color != self.color
+        return self.color_of(other) is not None and self.color_of(self) != self.color_of(other)
 
     def to_string(self):
         return self.color + self.symbol

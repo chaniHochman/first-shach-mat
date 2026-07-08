@@ -2,7 +2,7 @@
 from Piece import Piece
 
 
-class Bishop(Piece):
+class Bishop(Piece):#רץ
     @property
     def symbol(self):
         return "B"

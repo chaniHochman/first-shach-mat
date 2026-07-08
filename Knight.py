@@ -1,4 +1,4 @@
-class Knight(Piece):
+class Knight(Piece):#סוס - פרש
     @property
     def symbol(self):
         return "N"
