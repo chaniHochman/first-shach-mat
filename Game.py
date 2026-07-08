@@ -7,7 +7,7 @@ class Game:
 
     def click(self,x,y):
         if moving is not None:
-            continue
+            return
         x = int(parts[1])
         y = int(parts[2])
         
@@ -21,10 +21,10 @@ class Game:
         
         #בדיקה אם נמצא בתוך הלוח
         if row < 0 or row >= rows:
-            continue
+            return
         
         if col < 0 or col >= cols:
-            continue
+            return
         
         
         if selected is None: #אם אין בחירה עדיין
